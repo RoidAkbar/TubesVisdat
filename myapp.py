@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# **FINAL PROJECT VISDAT - PERGERAKAN SAHAM**
+# **FINAL PROJECT VISDAT**
 # 
 # Anggota Kelompok:
 # 1.   Muhammad Ro'id Akbar Aslami
 # 2.   Dhikayla Azizah Putri
 # 3.   Ghifari Fazlul Makmur
 
-# In[97]:
+# In[16]:
 
 
 # Data handling
@@ -21,22 +21,23 @@ from bokeh.plotting import figure, show
 from bokeh.models import ColumnDataSource
 from bokeh.layouts import row, column, gridplot
 from bokeh.models.widgets import Tabs, Panel
+from bokeh.models.tools import HoverTool
 
 
-# In[98]:
+# In[17]:
 
 
 # Baca dataset
 df_sm = pd.read_csv('stock_market.csv')
 
 
-# In[99]:
+# In[18]:
 
 
 df_sm.head()
 
 
-# In[100]:
+# In[19]:
 
 
 # Mengubah column Date menjadi datetime
@@ -44,7 +45,7 @@ df_sm['Date']= pd.to_datetime(df_sm['Date'])
 # df_sm.head()
 
 
-# In[101]:
+# In[20]:
 
 
 # Assign data untuk tiap indeks saham
@@ -58,7 +59,7 @@ nasdaq_new = ColumnDataSource(nasdaq)
 nikkei_new = ColumnDataSource(nikkei)
 
 
-# In[102]:
+# In[21]:
 
 
 # Membuat figure
@@ -67,7 +68,7 @@ fig = figure(x_axis_type='datetime',
              title='Perbandingan Pergerakan 3 Saham',
              x_axis_label='Tanggal', y_axis_label='Harga Tutup')
 
-# Render indeks saham dalam plot line
+# Plotting indeks saham dalam plot line
 hangseng_line = fig.line('Date', 'Adj Close', 
          color='blue', legend_label='HANG SENG', 
          source=hangseng_new)
@@ -81,16 +82,18 @@ nikkei_line = fig.line('Date', 'Adj Close',
          source=nikkei_new)
 
 
-# In[105]:
+# In[24]:
 
 
 # Membuat interaksi
-from bokeh.models.tools import HoverTool
+
+# Figure di jupyter notebook
+output_notebook()
 
 # Tooltip
 tooltips = [
             ('Name','@Name'),
-            ('Price', '@{Adj Close}'),
+            ('Close Price', '@{Adj Close}'),
            ]
 
 # Membuat interaksi hover untuk tiap indeks saham
@@ -104,5 +107,10 @@ fig.legend.click_policy="hide"
 
 # Menampilkan figure
 show(fig)
-output_notebook()
+
+
+# In[ ]:
+
+
+
 
