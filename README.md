@@ -3,6 +3,6 @@ FINAL PROJECT VISDAT - PERGERAKAN SAHAM
 
 Anggota Kelompok:
 
-Muhammad Ro'id Akbar Aslami
-Dhikayla Azizah Putri
-Ghifari Fazlul Makmur
+1. Muhammad Ro'id Akbar Aslami
+2. Dhikayla Azizah Putri
+3. Ghifari Fazlul Makmur
