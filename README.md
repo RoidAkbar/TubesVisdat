@@ -1,8 +1,8 @@
 # TubesVisdat
-#FINAL PROJECT VISDAT - PERGERAKAN SAHAM
+FINAL PROJECT VISDAT - PERGERAKAN SAHAM
 
-#Anggota Kelompok:
+Anggota Kelompok:
 
-#Muhammad Ro'id Akbar Aslami
-#Dhikayla Azizah Putri
-#Ghifari Fazlul Makmur
+Muhammad Ro'id Akbar Aslami
+Dhikayla Azizah Putri
+Ghifari Fazlul Makmur
